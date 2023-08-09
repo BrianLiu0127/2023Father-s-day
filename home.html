@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    <title>2023 父親節活動</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .bigbox {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-content: center;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            padding-top: 100px;
+        }
+
+        .inputbox {
+            width: 200px;
+            margin: 10px;
+        }
+
+        .headtitle {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body style="background-color: E9DAD2;">
+    <div class="bigbox">
+        <div>
+
+        </div>
+        <div>
+            <div class="box">
+                <h2 class="headtitle">請輸入密碼</h2>
+                <input class="inputbox" type="text" inputmode="numeric" id="inputpassword" size="20"
+                    placeholder="請輸入四位數密碼">
+                <button class="inputbox" type="button" id="submit" onclick="submit()">送出</button>
+            </div>
+        </div>
+        <div>
+
+        </div>
+    </div>
+
+
+
+    <script>
+        const answer = "1234";
+
+        function Correct() {
+            alert("correct!");
+        }
+
+        function Wrong() {
+            alert("wrong");
+        }
+        function submit() {
+            console.log("submited");
+            var num = document.getElementById("inputpassword");
+            if (num.value == answer) {
+                Correct();
+            }
+            else {
+                Wrong();
+            }
+        }
+
+    </script>
+</body>
+
+</html>
