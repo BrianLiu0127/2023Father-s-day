@@ -4,12 +4,23 @@
     <title>2023 父親節活動</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="RAY.png" type="image/x-icon" />
     <style>
+        body {
+            background-color: E9DAD2;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            font-family: sans-serif;
+        }
+
         .bigbox {
             display: flex;
             flex-direction: row;
             justify-content: center;
             align-content: center;
+            vertical-align: bottom;
+            width: 100%;
         }
 
         .box {
@@ -38,15 +49,53 @@
             justify-content: center;
             font-size: 5dvh;
         }
+
+        .message {
+            position: absolute;
+            width: 90%;
+            height: 90%;
+            top: 10px;
+            border-radius: 2%;
+            border: none;
+            box-shadow: 0 2px 6px #959595;
+            background-color: rgb(207, 114, 114);
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wrong-content {
+            /* background-color: white; */
+            height: 60%;
+            width: 60%;
+            display: flex;
+            justify-content: center;
+            font-size: 10dvh;
+        }
+
+        .correct-content {
+            /* background-color: white; */
+            height: 60%;
+            width: 60%;
+            display: flex;
+            justify-content: center;
+            font-size: 10dvh;
+        }
     </style>
 </head>
 
-<body style="background-color: E9DAD2;">
+<body>
     <div class="bigbox">
         <div>
-        </div>
-        <div>
-            <h1 style="font-size: 200%;">2023 RAY 父親節活動</h1>
+            <div class="bigbox">
+                <div style="display: flex; justify-content: center; align-content: center;">
+                    <img src="RAY.png" width="90px" height="90px" style="padding-top: 30%; margin-right: 10px;"></img>
+                </div>
+                <div>
+                    <p style="font-size: 200%; text-align: center; font-weight: bold;">2023 RAY<br>父親節活動</p>
+                </div>
+            </div>
             <hr style="color: black; border: solid 2px;">
             <div class="box">
                 <h2 class="description">請輸入密碼</h2>
@@ -58,8 +107,16 @@
                 </div>
             </div>
         </div>
-        <div>
-        </div>
+    </div>
+
+    <div class="message" style="background-color: rgb(114, 207, 150);" id="correct_mes">
+        <span class="correct-content">恭<br>喜<br>通<br>關<br></span>
+        <p>請找RAY領取您的獎品</p>
+        <button type="button" id="finish" onclick="Finish()">完成</button>
+    </div>
+    <div class="message" id="wrong_mes">
+        <span class="wrong-content">密<br>碼<br>錯<br>誤</span>
+        <button type="button" id="try-again" onclick="Close()">再試一次</button>
     </div>
 
 
@@ -68,11 +125,15 @@
         const answer = "1234";
 
         function Correct() {
-            alert("correct!");
+            // alert("correct!");
+            var correct_message = document.getElementById("correct_mes");
+            correct_message.style.display = "flex";
         }
 
         function Wrong() {
-            alert("wrong");
+            // alert("wrong");
+            var wrong_message = document.getElementById("wrong_mes");
+            wrong_message.style.display = "flex";
         }
         function submit() {
             console.log("submited");
@@ -83,6 +144,16 @@
             else {
                 Wrong();
             }
+        }
+
+        function Close() {
+            var wrong_message = document.getElementById("wrong_mes");
+            wrong_message.style.display = "none";
+        }
+
+        function Finish() {
+            var correct_message = document.getElementById("correct_mes");
+            correct_message.style.display = "none";
         }
 
     </script>
