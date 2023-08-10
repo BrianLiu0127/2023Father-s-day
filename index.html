@@ -27,10 +27,16 @@
             font-size: 100%;
         }
 
-        .headtitle {
+        .input-region {
             display: flex;
             justify-content: center;
-            font-size: 5vh;
+            font-size: 4dvh;
+        }
+
+        .description {
+            display: flex;
+            justify-content: center;
+            font-size: 5dvh;
         }
     </style>
 </head>
@@ -43,11 +49,11 @@
             <h1 style="font-size: 200%;">2023 RAY 父親節活動</h1>
             <hr style="color: black; border: solid 2px;">
             <div class="box">
-                <h2 class="headtitle">請輸入密碼</h2>
-                <div class="headtitle">
+                <h2 class="description">請輸入密碼</h2>
+                <div class="input-region">
                     <input class="inputbox" type="text" inputmode="numeric" id="inputpassword" placeholder="請輸入四位數密碼">
                 </div>
-                <div class="headtitle">
+                <div class="input-region">
                     <button class="inputbox" type="button" id="submit" onclick="submit()">送出</button>
                 </div>
             </div>
